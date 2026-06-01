@@ -77,7 +77,8 @@ function CurrentlyPlaying() {
                 setRemainingTime(song.time_remaining);
 
             } catch (err) {
-                setError("Nepodarilo sa načítať novú pieseň.")
+                setError("Nepodarilo sa načítať novú pieseň.");
+                console.log(err);
             }
         }
 
