@@ -16,8 +16,7 @@ async function fetchCurrentCandidates():Promise<[CandidateType]> {
         throw new Error(`Failed to fetch currently candidates:${response.statusText}`)
     }
 
-    const data = await response.json();
-    return data;
+    return await response.json();
 }
 
 
@@ -97,6 +96,7 @@ function Voting() {
                     setVoted(false);
             } catch (err) {
                 setError("Nepodarilo sa načítať novú pieseň.")
+                console.log(err);
             }
         }
 

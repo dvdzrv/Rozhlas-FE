@@ -9,6 +9,5 @@ export async function fetchCurrentlyPlaylingSong(): Promise<SongType> {
         throw new Error(`Failed to fetch currently playing song:${response.statusText}`)
     }
 
-    const data = await response.json();
-    return data;
+    return await response.json();
 }
