@@ -1,118 +1,18 @@
-import { useState, useEffect } from 'react';
-import type { SongType } from './SongType.ts';
 import SongBar from "./SongBar.tsx";
-
-const API_URL = `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'}`;
-
-async function fetchCurrentlyPlaylingSong(): Promise<SongType> {
-    const response = await fetch(`${API_URL}/current_song`);
-
-    if (!response.ok) {
-        throw new Error(`Failed to fetch currently playing song:${response.statusText}`)
-    }
-
-    const data = await response.json();
-    return data;
-}
-
+import { usePlayer } from "../context/PlayerContext";
 
 function CurrentlyPlaying() {
-    //setCurrentlyPlayingSong nastaví currentlyPlayingSong a prerenderuje všetky elementy používajúce túto premennú
-    const [currentlyPlayingSong, setCurrentlyPlayingSong] = useState<SongType>();
+    const { currentlyPlayingSong, remainingTime, error } = usePlayer();
 
-    //Vytvorenie stavu počtu sekúnd do konca prehrávanej piesne
-    const [remainingTime, setRemainingTime] = useState<number>(0);
-
-    //setError nastaví error na nejaký string, ktorý vypíšeme používateľovi
-    const [error, setError] = useState<null | string>(null);
-
-    //Toto je taká haluška, že už píšem komenty
-    //Fetchovanie momentálne prehrávanej piesne na prvom renderi
-    //Vykoná sa iba na prvom render, kvôli [], ako 2. argument useEffect
-    useEffect(() => {
-        //Fetch momentálne prehrávanej piesne
-        fetchCurrentlyPlaylingSong()
-            //Keď príde response, vykoná sa lambda funkcia s argumentom data
-            .then((data) => {
-                //Nastavíme momentálne prehrávanú pieseň na fetchnutú pieseň
-                setCurrentlyPlayingSong(data);
-
-                //Nastavenie ostávajúceho času
-                setRemainingTime(data.time_remaining);
-
-                //Nenastal error, takže nastavíme error na null
-                setError(null);
-            })
-            //Error handling ak response nie je ok
-            //Vytvoríme lambda funkciu, ktorá setne error
-            .catch((err) => {
-                setError(err);
-            })
-    }, []);
-
-
-
-    //Timer do konca prehrávanej piesne
-    useEffect(() => {
-        //Ak nie je prehrávaná pesnička, nevykonávaj nič
-        if (!currentlyPlayingSong) return;
-
-        //Nastav časovač o 1 sekundu menej každú sekundu
-        const interval = setInterval(() => {
-            setRemainingTime(prev => prev - 1)
-        }, 1000);
-
-        //Vymaž tento časovač na konci
-        return () => clearInterval(interval);
-
-        //Vykonaj vždy keď je zmenená prehrávaná pieseň
-    }, [currentlyPlayingSong]);
-
-
-
-    //Vymeň prehrávanú pieseň keď skončí timer
-    useEffect(() => {
-        //Pokiaľ je timer viac ako 0 nerob nič
-        if (remainingTime > 0) return;
-
-        //Vytvorenie funkcie, ktorá vymení pieseň
-        async function refreshSong() {
-            try {
-                //Fetchni novú pieseň
-                const song = await fetchCurrentlyPlaylingSong();
-
-                //Nastav momentálne prehrávanú skladbu na na fetchnutú pieseň
-                setCurrentlyPlayingSong(song);
-
-                //Nastav nový časovač
-                setRemainingTime(song.time_remaining);
-
-            } catch (err) {
-                setError("Nepodarilo sa načítať novú pieseň.")
-            }
-        }
-
-        refreshSong();
-
-        //Vykonaj vždy keď sa zmení časovač
-    }, [remainingTime]);
-
-
-
-
-
-
-
-
-    if(error) {
+    if (error) {
         return (
             <div className="text-red-500 font-bold border-8 border-red-500">
-                Nepodarilo sa načítať momentálne prehrávanú pieseň.
+                {error}
             </div>
         )
     }
 
-    if(!currentlyPlayingSong) {
+    if (!currentlyPlayingSong) {
         return (
             <>
                 Načítavam...

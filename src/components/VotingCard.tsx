@@ -7,16 +7,16 @@ function VotingCard(
 ) {
     return (
         <div className="flex flex-col items-center p-1 w-full">
-            <iframe data-testid="embed-iframe" className="rounded-[12px] w-110 h-72"
+            <iframe data-testid="embed-iframe" className="rounded-[12px] w-3/4"
                     src={embedUrl}
                     height="200"
             >
             </iframe>
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-[12px] w-96"
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-[12px] w-3/4 mt-2"
             onClick={() => {
                 fetch(`${API_URL}/vote?song_id=${id}`, {method: "POST"});
             }}
-            disabled={!voted}
+            disabled={voted}
             >
                 Hlasuj.
             </button>
