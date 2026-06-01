@@ -1,19 +1,8 @@
 import { useState, useEffect } from 'react';
+import {fetchCurrentlyPlaylingSong} from "./fetchCurrentSong.ts";
 import type { SongType } from './SongType.ts';
 import SongBar from "./SongBar.tsx";
 
-const API_URL = `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'}`;
-
-async function fetchCurrentlyPlaylingSong(): Promise<SongType> {
-    const response = await fetch(`${API_URL}/current_song`);
-
-    if (!response.ok) {
-        throw new Error(`Failed to fetch currently playing song:${response.statusText}`)
-    }
-
-    const data = await response.json();
-    return data;
-}
 
 
 function CurrentlyPlaying() {
@@ -81,7 +70,7 @@ function CurrentlyPlaying() {
                 //Fetchni novú pieseň
                 const song = await fetchCurrentlyPlaylingSong();
 
-                //Nastav momentálne prehrávanú skladbu na na fetchnutú pieseň
+                //Nastav momentálne prehrávanú skladbu na fetchnutú pieseň
                 setCurrentlyPlayingSong(song);
 
                 //Nastav nový časovač

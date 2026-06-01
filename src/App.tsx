@@ -9,7 +9,7 @@ function App() {
       <>
           <Header />
           <CurrentlyPlaying />
-          <Voting />
+          <Voting/>
           <Playlist />
           <Footer />
       </>
