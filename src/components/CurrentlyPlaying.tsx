@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import type { Song } from './Song.ts';
+import type { SongType } from './SongType.ts';
 import SongBar from "./SongBar.tsx";
 
 const API_URL = `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'}`;
 
-async function fetchCurrentlyPlaylingSong(): Promise<Song> {
+async function fetchCurrentlyPlaylingSong(): Promise<SongType> {
     const response = await fetch(`${API_URL}/current_song`);
 
     if (!response.ok) {
@@ -18,7 +18,7 @@ async function fetchCurrentlyPlaylingSong(): Promise<Song> {
 
 function CurrentlyPlaying() {
     //setCurrentlyPlayingSong nastaví currentlyPlayingSong a prerenderuje všetky elementy používajúce túto premennú
-    const [currentlyPlayingSong, setCurrentlyPlayingSong] = useState<Song>();
+    const [currentlyPlayingSong, setCurrentlyPlayingSong] = useState<SongType>();
 
     //Vytvorenie stavu počtu sekúnd do konca prehrávanej piesne
     const [remainingTime, setRemainingTime] = useState<number>(0);
@@ -106,7 +106,7 @@ function CurrentlyPlaying() {
 
     if(error) {
         return (
-            <div className="text-white">
+            <div className="text-red-500 font-bold border-8 border-red-500">
                 Nepodarilo sa načítať momentálne prehrávanú pieseň.
             </div>
         )
@@ -127,7 +127,9 @@ function CurrentlyPlaying() {
                     height="152"
                     loading="lazy">
             </iframe>
-            <SongBar remainingTime={remainingTime} durationSeconds={currentlyPlayingSong.duration_seconds} fillColor="#24AC50"/>
+            <div className="mt-2 mb-2">
+                <SongBar remainingTime={remainingTime} durationSeconds={currentlyPlayingSong.duration_seconds} fillColor="#24AC50"/>
+            </div>
         </>
     )
 }
