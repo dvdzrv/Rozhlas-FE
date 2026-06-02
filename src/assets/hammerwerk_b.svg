@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Vrstva_1" data-name="Vrstva 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258.27 59.78">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .11em;
+      }
+
+      .cls-2 {
+        letter-spacing: .2em;
+      }
+
+      .cls-3 {
+        letter-spacing: .17em;
+      }
+
+      .cls-4 {
+        letter-spacing: .19em;
+      }
+
+      .cls-5, .cls-6 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5, .cls-7, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-9 {
+        letter-spacing: .1em;
+      }
+
+      .cls-6 {
+        fill: none;
+      }
+
+      .cls-7 {
+        font-family: Platypi-Light, Platypi;
+        font-weight: 300;
+      }
+
+      .cls-7, .cls-8 {
+        font-size: 24px;
+      }
+
+      .cls-10 {
+        letter-spacing: .1em;
+      }
+
+      .cls-8 {
+        font-family: Platypi-Bold, Platypi;
+        font-weight: 700;
+      }
+
+      .cls-11 {
+        letter-spacing: .2em;
+      }
+
+      .cls-12 {
+        letter-spacing: .09em;
+      }
+
+      .cls-13 {
+        letter-spacing: .1em;
+      }
+
+      .cls-14 {
+        letter-spacing: .16em;
+      }
+
+      .cls-15 {
+        letter-spacing: .19em;
+      }
+
+      .cls-16 {
+        letter-spacing: .2em;
+      }
+
+      .cls-17 {
+        letter-spacing: .19em;
+      }
+
+      .cls-18 {
+        letter-spacing: .1em;
+      }
+
+      .cls-19 {
+        letter-spacing: .2em;
+      }
+    </style>
+  </defs>
+  <text class="cls-8" transform="translate(22.35 20.28)"><tspan class="cls-4" x="0" y="0">H</tspan><tspan class="cls-16" x="24.05" y="0">am</tspan><tspan class="cls-19" x="72" y="0">m</tspan><tspan class="cls-17" x="100.92" y="0">e</tspan><tspan class="cls-11" x="119.21" y="0">r</tspan><tspan class="cls-14" x="136.03" y="0">w</tspan><tspan class="cls-15" x="162.55" y="0">e</tspan><tspan class="cls-3" x="180.84" y="0">r</tspan><tspan class="cls-2" x="196.94" y="0">k</tspan></text>
+  <text class="cls-7" transform="translate(87.03 52.78)"><tspan class="cls-13" x="0" y="0">s</tspan><tspan class="cls-18" x="14.3" y="0">t</tspan><tspan class="cls-1" x="27.41" y="0">u</tspan><tspan class="cls-9" x="44.26" y="0">d</tspan><tspan class="cls-12" x="60.81" y="0">i</tspan><tspan class="cls-10" x="70.01" y="0">o</tspan></text>
+  <line class="cls-5" y1="28.89" x2="258.27" y2="28.89"/>
+  <g>
+    <ellipse class="cls-5" cx="69.79" cy="38.99" rx="4.4" ry="6"/>
+    <line class="cls-6" x1="66.02" y1="53.84" x2="74.19" y2="53.84"/>
+    <path class="cls-6" d="M63.72,44.99c1.43,2.57,4.49,3.97,7.34,3.49,3.24-.54,4.66-3.23,4.79-3.49"/>
+    <line class="cls-6" x1="69.79" y1="49.03" x2="69.79" y2="53.84"/>
+  </g>
+</svg>

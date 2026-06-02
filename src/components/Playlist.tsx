@@ -52,13 +52,13 @@ function Playlist() {
     }
 
     return (
-        <>
+        <div className="mt-10">
             <iframe data-testid="embed-iframe" className="border-radius:12px"
                     src={currentPlaylist.embed_url}
-                    width="100%" height="352"
+                    width="100%" height="600"
                     loading="lazy">
             </iframe>
-        </>
+        </div>
     )
 }
 
