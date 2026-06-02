@@ -5,7 +5,7 @@ import VotingCard from "./VotingCard.tsx"
 
 
 
-const API_URL = `${import.meta.env.VITE_API_URL || 'http://194.160.224.5:9000'}`;
+const API_URL = `${import.meta.env.VITE_API_URL || 'https://api.sostrv.org'}`;
 
 
 

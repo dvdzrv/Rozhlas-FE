@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type {PlaylistType} from "./PlaylistType.ts";
 
-const API_URL = `${import.meta.env.VITE_API_URL || 'http://194.160.224.5:9000'}`;
+const API_URL = `${import.meta.env.VITE_API_URL || 'https://api.sostrv.org'}`;
 
 async function fetchCurrentPlaylist(): Promise<PlaylistType> {
     const response = await fetch(`${API_URL}/playlist`);
