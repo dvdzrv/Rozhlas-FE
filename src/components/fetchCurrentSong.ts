@@ -1,6 +1,6 @@
 import type {SongType} from "./SongType.ts";
 
-const API_URL = `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'}`;
+const API_URL = `${import.meta.env.VITE_API_URL || 'https://api.sostrv.org'}`;
 
 export async function fetchCurrentlyPlaylingSong(): Promise<SongType> {
     const response = await fetch(`${API_URL}/current_song`);
