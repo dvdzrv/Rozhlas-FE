@@ -4,7 +4,7 @@ function Footer() {
         <footer className="bg-[#191414] text-white pt-10 mt-[60px] rounded-t-[30px] max-md:rounded-t-[20px] max-md:pt-[30px]">
             <div className="max-w-[1200px] mx-auto px-5 pb-[30px] grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 max-md:grid-cols-1 max-md:gap-[30px] max-md:pb-5">
                 <div className="px-[15px] max-md:px-0">
-                    <h3 className="text-[1.8rem] text-[#E3C207] mb-[15px] font-bold max-md:text-[1.6rem]">Školský Rozhlas</h3>
+                    <h3 className="text-[1.8rem] text-[#E3C207] mb-[15px] font-bold max-md:text-[1.6rem]">Školský rozhlas</h3>
                     <p className="text-[#b3b3b3] leading-[1.6] text-[0.95rem]">
                         Interaktívny hudobný systém pre Strednú odbornú školu Technickú v Rožňave.
                     </p>
@@ -20,7 +20,7 @@ function Footer() {
             </div>
 
             <div className="text-center py-[25px] px-5 bg-black/30 border-t border-white/10">
-                <p className="my-[5px] text-[#b3b3b3] text-[0.9rem]">© {currentYear} Stredná odborná škola Technická Hviezdoslavova 5, Rožňava | Vyvíjal Tomašík a Szomolai</p>
+                <p className="my-[5px] text-[#b3b3b3] text-[0.9rem]">© {currentYear} Stredná odborná škola technická Hviezdoslavova 5, Rožňava | Vyvíjal Tomašík a Szomolai</p>
             </div>
         </footer>
     );
