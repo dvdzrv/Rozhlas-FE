@@ -118,7 +118,7 @@ function CurrentlyPlaying() {
                     loading="lazy">
             </iframe>
             <div className="mt-2 mb-2">
-                <SongBar remainingTime={remainingTime} durationSeconds={currentlyPlayingSong.duration_seconds} fillColor="#24AC50"/>
+                <SongBar remainingTime={remainingTime} durationSeconds={currentlyPlayingSong.duration_seconds} fillColor="#E3C207"/>
             </div>
         </>
     )

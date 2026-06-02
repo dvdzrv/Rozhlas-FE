@@ -12,7 +12,7 @@ function VotingCard(
                     height="200"
             >
             </iframe>
-            <button className={`text-white font-bold py-2 px-4 rounded-[12px] w-96 ${vote? "bg-green-900 hover:bg-green-950" : "bg-green-500 hover:bg-green-700"}`}
+            <button className={`text-black font-bold py-2 px-4 rounded-[12px] w-96 ${!vote? "bg-[#E3C207] hover:bg-[#A0A207]" : "bg-[#6e6b37] hover:bg-[#3e3b17]"}`}
             onClick={() => {
                 fetch(`${API_URL}/vote?song_id=${id}`, {method: "POST"});
                 setVote(true)
