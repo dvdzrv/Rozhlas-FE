@@ -124,7 +124,7 @@ function Voting() {
 
 
     return (
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 flex-wrap p-4 w-full overflow-x-hidden">
             {currentCandidates.map(
                 (candidate, index) => (
                     <VotingCard id={index} embedUrl={candidate.embed_url} vote={voted} setVote={setVoted} />
